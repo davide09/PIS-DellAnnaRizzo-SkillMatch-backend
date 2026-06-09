@@ -1,0 +1,36 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: contract-service
+
+  datasource:
+    url: jdbc:postgresql://contract-db:5432/skillmatch_contracts
+    username: skillmatch
+    password: skillmatch
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: skillmatch
+    password: skillmatch
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+contract:
+  user-service-url: http://user-service:8083/api/users/internal
+  project-service-url: http://project-service:8081/api/projects/internal

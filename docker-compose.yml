@@ -1,0 +1,207 @@
+version: "3.9"
+
+services:
+
+  # =====================
+  # 🔵 RabbitMQ
+  # =====================
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: skillmatch
+      RABBITMQ_DEFAULT_PASS: skillmatch
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - skillmatch-net
+
+  # =====================
+  # 🟦 USER DATABASE
+  # =====================
+  user-db:
+    image: postgres:15
+    container_name: user-db
+    environment:
+      POSTGRES_USER: skillmatch
+      POSTGRES_PASSWORD: skillmatch
+      POSTGRES_DB: skillmatch_users
+    ports:
+      - "5432:5432"
+    volumes:
+      - user_data:/var/lib/postgresql/data
+    networks:
+      - skillmatch-net
+
+  # =====================
+  # 🟧 PROJECT DATABASE
+  # =====================
+  project-db:
+    image: postgres:15
+    container_name: project-db
+    environment:
+      POSTGRES_USER: skillmatch
+      POSTGRES_PASSWORD: skillmatch
+      POSTGRES_DB: skillmatch_projects
+    ports:
+      - "5433:5432"
+    volumes:
+      - project_data:/var/lib/postgresql/data
+    networks:
+      - skillmatch-net
+
+  # =====================
+  # 🟩 CONTRACT DATABASE
+  # =====================
+  contract-db:
+    image: postgres:15
+    container_name: contract-db
+    environment:
+      POSTGRES_USER: skillmatch
+      POSTGRES_PASSWORD: skillmatch
+      POSTGRES_DB: skillmatch_contracts
+    ports:
+      - "5434:5432"
+    volumes:
+      - contract_data:/var/lib/postgresql/data
+    networks:
+      - skillmatch-net
+
+  # =====================
+  # 🟦 USER SERVICE (porta 8083)
+  # =====================
+  user-service:
+    build:
+      context: ./user-service
+      dockerfile: Dockerfile
+    container_name: user-service
+    depends_on:
+      - user-db
+      - rabbitmq
+    ports:
+      - "8083:8083"
+    networks:
+      - skillmatch-net
+
+  # =====================
+  # 🟧 PROJECT SERVICE (porta 8081)
+  # =====================
+  project-service:
+    build:
+      context: ./project-service
+      dockerfile: Dockerfile
+    container_name: project-service
+    depends_on:
+      - project-db
+      - rabbitmq
+    ports:
+      - "8081:8081"
+    networks:
+      - skillmatch-net
+
+  # =====================
+  # 🟩 CONTRACT SERVICE (porta 8082)
+  # =====================
+  contract-service:
+    build:
+      context: ./contract-service
+      dockerfile: Dockerfile
+    container_name: contract-service
+    depends_on:
+      - contract-db
+      - rabbitmq
+      - project-service
+    ports:
+      - "8082:8082"
+    networks:
+      - skillmatch-net
+
+  # =====================
+  # 🟪 MATCHING SERVICE (porta 8084)
+  # =====================
+  matching-service:
+    build:
+      context: ./matching-service
+      dockerfile: Dockerfile
+    container_name: matching-service
+    depends_on:
+      - user-service
+      - project-service
+      - rabbitmq
+    ports:
+      - "8084:8084"
+    networks:
+      - skillmatch-net
+
+  # =====================
+  # 🟨 WALLET DATABASE
+  # =====================
+  wallet-db:
+    image: postgres:15
+    container_name: wallet-db
+    environment:
+      POSTGRES_USER: skillmatch
+      POSTGRES_PASSWORD: skillmatch
+      POSTGRES_DB: skillmatch_wallets
+    ports:
+      - "5436:5432"
+    volumes:
+      - wallet_data:/var/lib/postgresql/data
+    networks:
+      - skillmatch-net
+
+  # =====================
+  # 🟨 WALLET SERVICE (porta 8087)
+  # =====================
+  wallet-service:
+    build:
+      context: ./wallet-service
+      dockerfile: Dockerfile
+    container_name: wallet-service
+    depends_on:
+      - wallet-db
+      - rabbitmq
+    ports:
+      - "8087:8087"
+    networks:
+      - skillmatch-net
+
+  # =====================
+  # 🟣 GATEWAY (porta 8080)
+  # =====================
+  gateway-service:
+    build:
+      context: ./gateway-service
+      dockerfile: Dockerfile
+    container_name: gateway-service
+    depends_on:
+      - user-service
+      - project-service
+      - contract-service
+      - matching-service
+    ports:
+      - "8080:8080"
+    networks:
+      - skillmatch-net
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    ports:
+      - "8088:8080"
+    networks:
+      - skillmatch-net
+
+# =====================
+# 🟦 NETWORKS + VOLUMES
+# =====================
+networks:
+  skillmatch-net:
+
+volumes:
+  user_data:
+  project_data:
+  contract_data:
+  wallet_data:
