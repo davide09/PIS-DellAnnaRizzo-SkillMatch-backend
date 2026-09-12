@@ -17,8 +17,8 @@ public class Skill {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;   // es. "Java", "React"
-    private String level;  // "JUNIOR", "MEDIUM", "SENIOR" (come nel FE)
+    private String name;
+    private String level;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "professional_id")

@@ -14,5 +14,5 @@ public class MatchResultDTO {
 
     private Long projectId;
     private List<Long> matchedUsers;
-    private List<UserMatchDTO> ranking;   // classifica completa
+    private List<UserMatchDTO> ranking;
 }

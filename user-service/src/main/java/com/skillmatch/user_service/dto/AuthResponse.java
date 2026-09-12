@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AuthResponse {
-    private Long id;         // ID utente
-    private Long companyId;  // SOLO se role = COMPANY
+    private Long id;
+    private Long companyId;
     private String name;
     private String email;
     private String role;

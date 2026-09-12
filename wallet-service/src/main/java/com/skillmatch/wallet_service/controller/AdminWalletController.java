@@ -18,9 +18,7 @@ public class AdminWalletController {
 
     private final WalletService walletService;
 
-    // ============================================================
-    // 1. LISTA DI TUTTI I WALLET
-    // ============================================================
+
     @GetMapping
     public List<WalletDTO> listAllWallets() {
         return walletService.getAllWallets()
@@ -34,9 +32,7 @@ public class AdminWalletController {
                 .toList();
     }
 
-    // ============================================================
-    // 2. LISTA TRANSAZIONI GLOBALI
-    // ============================================================
+
     @GetMapping("/transactions")
     public List<WalletTransactionDTO> listAllTransactions() {
         return walletService.getAllTransactions()
@@ -53,9 +49,7 @@ public class AdminWalletController {
                 .toList();
     }
 
-    // ============================================================
-    // 3. TRANSAZIONI PER TIPOLOGIA (CREDIT / COMMISSION_FEE)
-    // ============================================================
+
     @GetMapping("/transactions/{type}")
     public List<WalletTransactionDTO> listTransactionsByType(@PathVariable String type) {
         return walletService.getTransactionsByType(type.toUpperCase())
@@ -72,9 +66,7 @@ public class AdminWalletController {
                 .toList();
     }
 
-    // ============================================================
-    // 4. FORZA DEPOSITO MANUALE (ADMIN)
-    // ============================================================
+
     @PostMapping("/{userId}/force-deposit")
     public WalletDTO adminDeposit(
             @PathVariable Long userId,
@@ -88,9 +80,7 @@ public class AdminWalletController {
         return dto;
     }
 
-    // ============================================================
-    // 5. AZZERA WALLET
-    // ============================================================
+
     @PostMapping("/{userId}/reset")
     public WalletDTO resetWallet(@PathVariable Long userId) {
         Wallet w = walletService.resetWallet(userId);
@@ -101,9 +91,7 @@ public class AdminWalletController {
         return dto;
     }
 
-    // ============================================================
-    // 6. CANCELLA/CHIUDI WALLET
-    // ============================================================
+
     @DeleteMapping("/{userId}")
     public String deleteWallet(@PathVariable Long userId) {
         walletService.deleteWallet(userId);

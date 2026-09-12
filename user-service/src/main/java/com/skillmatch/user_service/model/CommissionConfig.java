@@ -13,7 +13,7 @@ public class CommissionConfig {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // percentuale es: 8 significa 8%
+
     @Column(nullable = false)
     private Double percentage;
 }

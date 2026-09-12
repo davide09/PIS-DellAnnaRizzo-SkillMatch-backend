@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 public class FeedbackDTO {
     private Long id;
     private Long contractId;
-    private Long professionalId; // solo l'id, non l'oggetto User
+    private Long professionalId;
     private Long raterId;
     private int rating;
     private String comment;

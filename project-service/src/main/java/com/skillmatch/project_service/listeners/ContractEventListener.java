@@ -39,7 +39,6 @@ public class ContractEventListener {
 
         switch (event.getEventType()) {
             case "CONTRACT_CREATED" -> {
-                // non cambiamo stato qui, rimane OPEN
             }
             case "CONTRACT_STARTED" -> project.setStatus(ProjectStatus.IN_PROGRESS);
             case "CONTRACT_COMPLETED" -> project.setStatus(ProjectStatus.COMPLETED);

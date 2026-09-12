@@ -27,7 +27,7 @@ public class WalletTransaction {
     private Double amount;
 
     @Column(nullable = false)
-    private String type; // CREDIT | COMMISSION_FEE
+    private String type;
 
     private String note;
 

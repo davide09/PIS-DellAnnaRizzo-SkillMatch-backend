@@ -30,12 +30,10 @@ public class SkillController {
                                 @RequestBody SkillRequest s,
                                 @AuthenticationPrincipal CustomUserDetails auth) {
 
-        // solo il proprietario può aggiungere skill
         if (!auth.getUser().getId().equals(professionalId)) {
             throw new RuntimeException("Non autorizzato");
         }
 
-        // controllo base
         if (s.getName() == null || s.getName().trim().isEmpty()) {
             throw new RuntimeException("Nome skill mancante");
         }
@@ -51,7 +49,6 @@ public class SkillController {
                             @PathVariable Long skillId,
                             @AuthenticationPrincipal CustomUserDetails auth) {
 
-        // solo il proprietario può eliminare skill
         if (!auth.getUser().getId().equals(professionalId)) {
             throw new RuntimeException("Non autorizzato");
         }

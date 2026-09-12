@@ -19,7 +19,7 @@ public class SecurityConfig {
                 .cors(Customizer.withDefaults())
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .anyRequest().permitAll() // il gateway valida il JWT
+                        .anyRequest().permitAll()
                 );
 
         return http.build();

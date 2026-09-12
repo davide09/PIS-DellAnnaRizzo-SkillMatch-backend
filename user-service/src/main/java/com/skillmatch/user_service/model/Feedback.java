@@ -1,5 +1,4 @@
 
-// src/main/java/com/skillmatch/user_service/model/Feedback.java
 package com.skillmatch.user_service.model;
 
 import jakarta.persistence.*;
@@ -24,8 +23,8 @@ public class Feedback {
     @JoinColumn(name = "professional_id")
     private User professional;
 
-    private Long raterId;      // chi ha dato il voto (azienda o professionista)
-    private int rating;        // 1..5
+    private Long raterId;
+    private int rating;
     private String comment;
 
     private LocalDateTime createdAt;

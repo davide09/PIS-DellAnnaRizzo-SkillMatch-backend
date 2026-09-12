@@ -21,9 +21,7 @@ public class EventPublisher {
         rabbitTemplate.setMessageConverter(messageConverter);
     }
 
-    // ============================================================
-    //  EVENTI PROPOSTA
-    // ============================================================
+
 
     public void publishProposalCreated(ContractProposalCreatedEvent event) {
         rabbitTemplate.convertAndSend(
@@ -53,14 +51,9 @@ public class EventPublisher {
         );
     }
 
-    // ============================================================
-    //  EVENTO PAGAMENTO CONTRATTO
-    //  → Wallet Service
-    // ============================================================
+
 
     public void publishPaid(ContractPaidEvent event) {
-
-        // Evento verso wallet-service
         rabbitTemplate.convertAndSend(
                 "wallet-exchange",
                 "contract.paid",

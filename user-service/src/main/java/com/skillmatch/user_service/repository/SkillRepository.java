@@ -10,6 +10,5 @@ import java.util.List;
 @Repository
 public interface SkillRepository extends JpaRepository<Skill, Long> {
 
-    // TROVA le skill usando professional.id
     List<Skill> findByProfessionalId(Long professionalId);
 }

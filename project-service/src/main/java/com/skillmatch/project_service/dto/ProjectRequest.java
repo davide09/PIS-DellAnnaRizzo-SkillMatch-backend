@@ -17,9 +17,9 @@ public class ProjectRequest {
 
     private BigDecimal budget;
 
-    // elenco competenze richieste (nome semplice)
+
     private List<String> requiredSkills;
 
-    // livello esperienza richiesto (es. JUNIOR/MID/SENIOR)
+
     private String experienceLevel;
 }

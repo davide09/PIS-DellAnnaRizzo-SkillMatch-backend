@@ -37,7 +37,7 @@ public class RabbitConfig {
 
     @Bean
     public Queue matchQueue() {
-        return new Queue("match.events.queue", true); // deve coincidere col matching-service
+        return new Queue("match.events.queue", true);
     }
 
     @Bean
@@ -49,7 +49,7 @@ public class RabbitConfig {
     public Binding matchBinding() {
         return BindingBuilder.bind(matchQueue())
                 .to(matchExchange())
-                .with("match.event"); // anche questo deve coincidere
+                .with("match.event");
     }
 
 

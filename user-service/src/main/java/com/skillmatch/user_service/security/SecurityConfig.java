@@ -27,16 +27,12 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        // login / registrazione
                         .requestMatchers("/api/auth/**").permitAll()
 
-                        // ⬇ ENDPOINT INTERNI: LIBERI
                         .requestMatchers("/api/users/internal/**").permitAll()
 
-                        // ENDPOINT ADMIN
                         .requestMatchers("/api/users/admin/**").hasRole("ADMIN")
 
-                        // utenti “reali” (frontend) – richiedono JWT
                         .requestMatchers("/api/users/**").hasAnyRole("COMPANY", "PROFESSIONAL")
 
                         .anyRequest().authenticated()

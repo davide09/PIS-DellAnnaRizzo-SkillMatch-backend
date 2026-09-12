@@ -21,16 +21,12 @@ public class WalletService {
     private final WalletRepository repo;
     private final WalletTransactionRepository txRepo;
 
-    // ============================================================
-    // OTTIENE IL WALLET
-    // ============================================================
+
     public Wallet getWallet(Long userId) {
         return repo.findById(userId).orElse(null);
     }
 
-    // =================================================================
-    // RESTITUISCE O CREA UN WALLET (SE ASSENTE) -> METODO "PROTEZIONE"
-    // =================================================================
+
     public Wallet getOrCreateWallet(Long userId) {
         return repo.findById(userId).orElseGet(() -> {
             Wallet w = new Wallet();
@@ -41,9 +37,7 @@ public class WalletService {
         });
     }
 
-    // ============================================================
-    // RICARICA WALLET (CREDIT)
-    // ============================================================
+
     public Wallet deposit(Long userId, Double amount) {
         if (amount == null || amount <= 0)
             throw new IllegalArgumentException("L'importo deve essere maggiore di zero.");
@@ -56,9 +50,7 @@ public class WalletService {
         return wallet;
     }
 
-    // ============================================================
-    // REGISTRA TRANSAZIONE
-    // ============================================================
+
     private void recordTransaction(Long userId, Double amount, WalletTransactionType type) {
         WalletTransaction tx = new WalletTransaction();
         tx.setWalletId(userId);
@@ -68,9 +60,7 @@ public class WalletService {
         txRepo.save(tx);
     }
 
-    // ============================================================
-    // DTO → SALDO WALLET
-    // ============================================================
+
     public WalletDTO getWalletDTO(Long userId) {
         Wallet w = getWallet(userId);
         WalletDTO dto = new WalletDTO();
@@ -79,9 +69,7 @@ public class WalletService {
         return dto;
     }
 
-    // ============================================================
-    // TRANSAZIONI PER FE
-    // ============================================================
+
     public List<WalletTransactionDTO> getWalletTransactions(Long userId) {
         return txRepo.findByWalletIdOrderByCreatedAtDesc(userId)
                 .stream()
@@ -95,23 +83,17 @@ public class WalletService {
                 .toList();
     }
 
-    // ============================================================
-    // ADMIN: LISTA TUTTI I WALLET
-    // ============================================================
+
     public List<Wallet> getAllWallets() {
         return repo.findAll();
     }
 
-    // ============================================================
-    // ADMIN: LISTA TUTTE LE TRANSAZIONI
-    // ============================================================
+
     public List<WalletTransaction> getAllTransactions() {
         return txRepo.findAll();
     }
 
-    // ============================================================
-    // ADMIN: FILTRA PER TIPO
-    // ============================================================
+
     public List<WalletTransaction> getTransactionsByType(String type) {
         return txRepo.findAll()
                 .stream()
@@ -119,32 +101,25 @@ public class WalletService {
                 .toList();
     }
 
-    // ============================================================
-    // ADMIN: RESET WALLET
-    // ============================================================
+
     public Wallet resetWallet(Long userId) {
         Wallet w = getOrCreateWallet(userId);
         w.setBalance(0.0);
         return repo.save(w);
     }
 
-    // ============================================================
-    // ADMIN: DELETE WALLET
-    // ============================================================
+
     public void deleteWallet(Long userId) {
         repo.deleteById(userId);
     }
 
-    // ============================================================
-    // ADMIN: APPLY TRANSACTION
-    // ============================================================
+
     public Wallet applyAdminTransaction(Long userId, Double amount,
                                         WalletTransactionType type, String note, Long contractId) {
 
         if (amount == null || amount <= 0)
             throw new IllegalArgumentException("Importo non valido");
 
-        //IDEMPOTENZA -> se esiste già una transazione (per: walletId, contractId, type) NON faccio nulla
         if (contractId != null &&
                 txRepo.existsByWalletIdAndContractIdAndType(userId, contractId, type.name())) {
             return getOrCreateWallet(userId);
@@ -152,12 +127,10 @@ public class WalletService {
 
         Wallet wallet = getOrCreateWallet(userId);
 
-        //Tutte le transazioni AUMENTANO il saldo
         wallet.setBalance(wallet.getBalance() + amount);
 
         repo.save(wallet);
 
-        // Registra transazione
         WalletTransaction tx = new WalletTransaction();
         tx.setWalletId(userId);
         tx.setAmount(amount);

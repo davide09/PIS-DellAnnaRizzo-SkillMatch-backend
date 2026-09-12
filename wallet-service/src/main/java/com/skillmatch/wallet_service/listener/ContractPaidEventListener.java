@@ -19,7 +19,7 @@ public class ContractPaidEventListener {
 
         Long contractId = event.getContractId();
 
-        // 1) Pagamento al professionista → CREDIT
+
         walletService.applyAdminTransaction(
                 event.getProfessionalId(),
                 event.getAmount() - event.getCommissionFee(),
@@ -28,9 +28,8 @@ public class ContractPaidEventListener {
                 contractId
         );
 
-        // 2) SkillMatch trattiene commissione → COMMISSION_FEE
         walletService.applyAdminTransaction(
-                -1L, // wallet virtuale di SkillMatch
+                -1L,
                 event.getCommissionFee(),
                 WalletTransactionType.COMMISSION_FEE,
                 "Commissione per contratto #" + contractId,

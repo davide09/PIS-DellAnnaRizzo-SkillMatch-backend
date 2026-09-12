@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7e28dda0-abf4-4ffa-840d-b832ab393761" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contract-service/src/main/java/com/skillmatch/contract_service/controller/InvoiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract-service/src/main/java/com/skillmatch/contract_service/controller/InvoiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contract-service/src/main/java/com/skillmatch/contract_service/events/EventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract-service/src/main/java/com/skillmatch/contract_service/events/EventPublisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contract-service/src/main/java/com/skillmatch/contract_service/model/ContractStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract-service/src/main/java/com/skillmatch/contract_service/model/ContractStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contract-service/src/main/java/com/skillmatch/contract_service/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract-service/src/main/java/com/skillmatch/contract_service/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/java/com/skillmatch/gateway_service/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/java/com/skillmatch/gateway_service/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matching-service/src/main/java/com/skillmatch/matching_service/config/RestTemplateConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/matching-service/src/main/java/com/skillmatch/matching_service/config/RestTemplateConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matching-service/src/main/java/com/skillmatch/matching_service/dto/MatchResultDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/matching-service/src/main/java/com/skillmatch/matching_service/dto/MatchResultDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matching-service/src/main/java/com/skillmatch/matching_service/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/matching-service/src/main/java/com/skillmatch/matching_service/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/skillmatch/project_service/config/RabbitConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/skillmatch/project_service/config/RabbitConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/skillmatch/project_service/controller/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/skillmatch/project_service/controller/ProjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/skillmatch/project_service/dto/ProjectRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/skillmatch/project_service/dto/ProjectRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/skillmatch/project_service/events/ContractEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/skillmatch/project_service/events/ContractEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/skillmatch/project_service/listeners/ContractEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/skillmatch/project_service/listeners/ContractEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/controller/AdminReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/controller/AdminReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/controller/SkillController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/controller/SkillController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/AuthResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/AuthResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/FeedbackDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/FeedbackDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/FeedbackRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/FeedbackRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/FeedbackSummary.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/FeedbackSummary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/InternalUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/InternalUserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/RegisterRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/CommissionConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/CommissionConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/Feedback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/Skill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/UserRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/repository/FeedbackRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/repository/FeedbackRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/repository/SkillRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/repository/SkillRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/AccountStatusFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/AccountStatusFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/JwtAuthFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/controller/AdminWalletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/controller/AdminWalletController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/controller/WalletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/controller/WalletController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/dto/AdminTransactionDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/dto/AdminTransactionDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/dto/TransactionFilterDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/dto/TransactionFilterDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/listener/ContractPaidEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/listener/ContractPaidEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/model/WalletTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/model/WalletTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/model/WalletTransactionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/model/WalletTransactionType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/service/WalletService.java" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/service/WalletService.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;dellanna27&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/davide09/PIS-DellAnnaRizzo-SkillMatch-backend.git&quot;,
+    &quot;accountId&quot;: &quot;b437aa7b-e187-4dd7-93f9-a207111666f3&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="3J2oWqgN761uz5eovOyjkubxQTS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.All in wallet-service.executor": "Run",
+    "Maven.contract-service [install].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.All in wallet-service">
+    <configuration name="All in wallet-service" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wallet-service" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContractServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="contract-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.skillmatch.contract_service.ContractServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MatchingServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="matching-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.skillmatch.matching_service.MatchingServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WalletServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="wallet-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.skillmatch.wallet_service.WalletServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in wallet-service" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7e28dda0-abf4-4ffa-840d-b832ab393761" name="Changes" comment="" />
+      <created>1788868562485</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1788868562485</updated>
+      <workItem from="1788868564805" duration="311000" />
+      <workItem from="1789227674495" duration="4644000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

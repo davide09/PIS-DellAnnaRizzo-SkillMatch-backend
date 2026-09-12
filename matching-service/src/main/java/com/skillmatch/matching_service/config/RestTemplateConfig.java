@@ -15,8 +15,6 @@ public class RestTemplateConfig {
     public RestTemplate restTemplate() {
 
         RestTemplate restTemplate = new RestTemplate();
-
-        // Header usato dai microservizi "internal"
         ClientHttpRequestInterceptor interceptor = (request, body, execution) -> {
             request.getHeaders().set("X-Internal-Key", "SKILLMATCH_INTERNAL_KEY");
             return execution.execute(request, body);

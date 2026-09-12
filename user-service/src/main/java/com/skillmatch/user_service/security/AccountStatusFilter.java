@@ -26,7 +26,6 @@ public class AccountStatusFilter extends OncePerRequestFilter {
             FilterChain filterChain
     ) throws ServletException, IOException {
 
-        // Viene settato da JwtAuthFilter
         String email = (String) request.getAttribute("email");
 
         if (email != null) {

@@ -18,7 +18,7 @@ public class InvoiceController {
     private final InvoiceRepository invoiceRepo;
     private final InvoicePdfService pdfService;
 
-    // restituisce InvoiceDTO invece di Invoice grezzo
+
     @GetMapping("/{id}")
     public InvoiceDTO getById(@PathVariable Long id) {
         Invoice invoice = invoiceRepo.findById(id)
@@ -26,8 +26,7 @@ public class InvoiceController {
         return toDTO(invoice);
     }
 
-    // il PDF non cambia: pdfService lavora sull'entità internamente,
-    // non espone nulla verso il client (restituisce byte[])
+
     @GetMapping("/{id}/pdf")
     public ResponseEntity<byte[]> downloadPdf(@PathVariable Long id) {
         Invoice invoice = invoiceRepo.findById(id)
@@ -47,9 +46,7 @@ public class InvoiceController {
         return new ResponseEntity<>(pdf, headers, HttpStatus.OK);
     }
 
-    // -------------------------------------------------------
-    //  METODI PRIVATI
-    // -------------------------------------------------------
+
 
     private InvoiceDTO toDTO(Invoice inv) {
         InvoiceDTO dto = new InvoiceDTO();

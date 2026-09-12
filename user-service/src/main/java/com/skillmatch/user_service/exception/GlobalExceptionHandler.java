@@ -15,7 +15,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Map<String, String>> handleRuntime(RuntimeException ex) {
 
         return ResponseEntity
-                .status(HttpStatus.UNAUTHORIZED)  // 401 invece di 500
+                .status(HttpStatus.UNAUTHORIZED)
                 .body(Map.of("message", ex.getMessage()));
     }
 }

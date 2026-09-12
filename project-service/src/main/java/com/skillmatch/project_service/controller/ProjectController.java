@@ -16,10 +16,6 @@ public class ProjectController {
 
     private final ProjectService service;
 
-    // =======================================================
-    // INTERNAL ENDPOINTS per matching-service
-    // =======================================================
-
     @GetMapping("/internal/{id}")
     public ProjectResponse internalGetById(@PathVariable Long id) {
         return service.getById(id);
@@ -29,10 +25,6 @@ public class ProjectController {
     public List<ProjectResponse> internalGetAll() {
         return service.getAll();
     }
-
-    // =======================================================
-    // Endpoint per utenti reali
-    // =======================================================
 
     @GetMapping
     public List<ProjectResponse> getAll() {

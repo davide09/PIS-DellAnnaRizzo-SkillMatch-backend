@@ -37,9 +37,9 @@ public class User {
     private Integer reputationCount;
     private String reputationLevel;
 
-    private String portfolioUrl; // link al portfolio (GitHub, sito...)
-    private String certifications; // testo libero -> ES.: AWS, JAVA, REACT...
-    private String notes; // note/descrizione profilo
+    private String portfolioUrl;
+    private String certifications;
+    private String notes;
 
     @OneToMany(mappedBy = "professional", fetch = FetchType.LAZY)
     @JsonManagedReference

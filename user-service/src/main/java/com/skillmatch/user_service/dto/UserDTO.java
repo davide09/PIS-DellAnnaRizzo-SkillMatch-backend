@@ -16,5 +16,5 @@ public class UserDTO {
     private String portfolioUrl;
     private String certifications;
     private String notes;
-    private List<SkillDTO> skills; // embedded, già "safe"
+    private List<SkillDTO> skills;
 }

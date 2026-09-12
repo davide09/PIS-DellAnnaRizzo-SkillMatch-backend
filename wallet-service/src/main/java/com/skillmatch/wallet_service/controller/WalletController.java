@@ -18,17 +18,13 @@ public class WalletController {
 
     private final WalletService service;
 
-    // ============================================================
-    // GET WALLET
-    // ============================================================
+
     @GetMapping("/{userId}")
     public WalletDTO getWallet(@PathVariable Long userId) {
         return service.getWalletDTO(userId);
     }
 
-    // ============================================================
-    // DEPOSIT
-    // ============================================================
+
     @PostMapping("/{userId}/deposit")
     public WalletDTO deposit(@PathVariable Long userId, @RequestBody DepositRequest req) {
         Wallet w = service.deposit(userId, req.getAmount());
@@ -38,9 +34,7 @@ public class WalletController {
         return dto;
     }
 
-    // ============================================================
-    // TRANSAZIONI DEL WALLET
-    // ============================================================
+
     @GetMapping("/{userId}/transactions")
     public List<WalletTransactionDTO> getTransactions(@PathVariable Long userId) {
         return service.getWalletTransactions(userId);

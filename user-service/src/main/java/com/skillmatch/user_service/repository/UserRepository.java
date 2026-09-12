@@ -1,5 +1,4 @@
 
-// src/main/java/com/skillmatch/user_service/repository/UserRepository.java
 package com.skillmatch.user_service.repository;
 
 import com.skillmatch.user_service.model.User;
