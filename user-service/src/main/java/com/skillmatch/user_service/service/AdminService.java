@@ -41,7 +41,7 @@ public class AdminService {
         User u = repo.findById(id)
                 .orElseThrow(() -> new RuntimeException("Utente non trovato"));
 
-        // PROTEZIONE: Un admin NON può essere sospeso
+
         if (u.getRole() == UserRole.ADMIN) {
             throw new RuntimeException("L'admin non può essere sospeso.");
         }
@@ -55,7 +55,6 @@ public class AdminService {
         User u = repo.findById(id)
                 .orElseThrow(() -> new RuntimeException("Utente non trovato"));
 
-        // PROTEZIONE: Un admin NON può essere riattivato
         if (u.getRole() == UserRole.ADMIN) {
             throw new RuntimeException("L'admin non può essere sospeso o modificato.");
         }

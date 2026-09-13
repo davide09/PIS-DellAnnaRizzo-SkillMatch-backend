@@ -5,55 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e28dda0-abf4-4ffa-840d-b832ab393761" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contract-service/src/main/java/com/skillmatch/contract_service/controller/InvoiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract-service/src/main/java/com/skillmatch/contract_service/controller/InvoiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contract-service/src/main/java/com/skillmatch/contract_service/events/EventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract-service/src/main/java/com/skillmatch/contract_service/events/EventPublisher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contract-service/src/main/java/com/skillmatch/contract_service/model/ContractStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract-service/src/main/java/com/skillmatch/contract_service/model/ContractStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contract-service/src/main/java/com/skillmatch/contract_service/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract-service/src/main/java/com/skillmatch/contract_service/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/java/com/skillmatch/gateway_service/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/java/com/skillmatch/gateway_service/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matching-service/src/main/java/com/skillmatch/matching_service/config/RestTemplateConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/matching-service/src/main/java/com/skillmatch/matching_service/config/RestTemplateConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matching-service/src/main/java/com/skillmatch/matching_service/dto/MatchResultDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/matching-service/src/main/java/com/skillmatch/matching_service/dto/MatchResultDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matching-service/src/main/java/com/skillmatch/matching_service/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/matching-service/src/main/java/com/skillmatch/matching_service/dto/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/skillmatch/project_service/config/RabbitConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/skillmatch/project_service/config/RabbitConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/skillmatch/project_service/controller/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/skillmatch/project_service/controller/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/skillmatch/project_service/dto/ProjectRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/skillmatch/project_service/dto/ProjectRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/skillmatch/project_service/events/ContractEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/skillmatch/project_service/events/ContractEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/src/main/java/com/skillmatch/project_service/listeners/ContractEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/java/com/skillmatch/project_service/listeners/ContractEventListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/controller/AdminReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/controller/AdminReportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/controller/SkillController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/controller/SkillController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/AuthResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/AuthResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/FeedbackDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/FeedbackDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/FeedbackRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/FeedbackRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/FeedbackSummary.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/FeedbackSummary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/InternalUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/InternalUserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/RegisterRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/dto/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/CommissionConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/CommissionConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/Feedback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/Report.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/Skill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/UserRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/repository/FeedbackRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/repository/FeedbackRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/repository/SkillRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/repository/SkillRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/AccountStatusFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/AccountStatusFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/JwtAuthFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/controller/AdminWalletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/controller/AdminWalletController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/controller/WalletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/controller/WalletController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/dto/AdminTransactionDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/dto/AdminTransactionDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/dto/TransactionFilterDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/dto/TransactionFilterDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/listener/ContractPaidEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/listener/ContractPaidEventListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/model/WalletTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/model/WalletTransaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/model/WalletTransactionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/model/WalletTransactionType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/service/WalletService.java" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-service/src/main/java/com/skillmatch/wallet_service/service/WalletService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/CommissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/CommissionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/FeedbackService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/FeedbackService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/ReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/ReportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/SkillService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/SkillService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,22 +42,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.All in wallet-service.executor": "Run",
-    "Maven.contract-service [install].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.configurations.included.in.services": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.All in wallet-service.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.contract-service [install].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -163,7 +121,8 @@
       <option name="presentableId" value="Default" />
       <updated>1788868562485</updated>
       <workItem from="1788868564805" duration="311000" />
-      <workItem from="1789227674495" duration="4644000" />
+      <workItem from="1789227674495" duration="5010000" />
+      <workItem from="1789304449098" duration="277000" />
     </task>
     <servers />
   </component>

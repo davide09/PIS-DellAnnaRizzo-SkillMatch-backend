@@ -36,8 +36,6 @@ public class FeedbackService {
                 .build();
 
         Feedback saved = feedbackRepo.save(fb);
-
-        // ricalcolo reputazione
         updateProfessionalReputation(professional);
 
         return toDTO(saved);
@@ -70,9 +68,7 @@ public class FeedbackService {
                 .toList();
     }
 
-    // -------------------------------------------------------
-    //  METODI PRIVATI
-    // -------------------------------------------------------
+
 
     private void updateProfessionalReputation(User professional) {
         var list = feedbackRepo.findByProfessional(professional);

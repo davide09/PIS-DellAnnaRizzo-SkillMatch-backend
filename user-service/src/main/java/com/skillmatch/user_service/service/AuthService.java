@@ -29,12 +29,10 @@ public class AuthService {
             throw new RuntimeException("Credenziali errate.");
         }
 
-        // controllo se l'utente/compagnia è approvato/a dall'admin
         if (!user.isEnabled()) {
             throw new RuntimeException("Account non approvato.");
         }
 
-        // controllo se l'utente/compagnia è sospeso/a dall'admin
         if(user.isSuspended()) {
             throw new RuntimeException("Account sospeso.");
         }
@@ -58,7 +56,7 @@ public class AuthService {
                         .name(req.getName())
                         .email(req.getEmail())
                         .password(encoder.encode(req.getPassword()))
-                        .role(UserRole.valueOf(req.getRole()))  // COMPANY / PROFESSIONAL
+                        .role(UserRole.valueOf(req.getRole()))
                         .enabled(false)
                         .build()
         );
@@ -76,7 +74,6 @@ public class AuthService {
 
     }
 
-    // USATO SOLO DAL MATCHING-SERVICE E ALTRI MICROSERVIZI
     public String generateInternalToken() {
         return jwt.generateToken("SYSTEM", "INTERNAL");
     }

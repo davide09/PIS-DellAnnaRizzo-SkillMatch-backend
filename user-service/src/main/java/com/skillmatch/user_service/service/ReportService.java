@@ -73,9 +73,7 @@ public class ReportService {
         }
     }
 
-    // -------------------------------------------------------
-    //  METODI PRIVATI
-    // -------------------------------------------------------
+
 
     private ReportDTO toDTO(Report r) {
         ReportDTO dto = new ReportDTO();

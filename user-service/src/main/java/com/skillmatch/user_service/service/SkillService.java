@@ -61,9 +61,7 @@ public class SkillService {
         skillRepo.delete(s);
     }
 
-    // -------------------------------------------------------
-    //  METODI PRIVATI
-    // -------------------------------------------------------
+
 
     private SkillDTO toDTO(Skill s) {
         SkillDTO dto = new SkillDTO();
