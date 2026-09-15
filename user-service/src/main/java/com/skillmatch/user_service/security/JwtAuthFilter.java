@@ -48,7 +48,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         String email = jwtUtil.extractEmail(token);
 
         if (email != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-
+            request.setAttribute("email", email);
             UserDetails user = userDetailsService.loadUserByUsername(email);
 
             var authToken = new org.springframework.security.authentication.UsernamePasswordAuthenticationToken(

@@ -27,14 +27,12 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/**").permitAll()
-
+                        .requestMatchers("/api/auth/login", "/api/auth/register").permitAll()
+                        .requestMatchers("/api/auth/logout").authenticated()
+                        .requestMatchers("/api/auth/internal-token").permitAll()
                         .requestMatchers("/api/users/internal/**").permitAll()
-
                         .requestMatchers("/api/users/admin/**").hasRole("ADMIN")
-
                         .requestMatchers("/api/users/**").hasAnyRole("COMPANY", "PROFESSIONAL")
-
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)

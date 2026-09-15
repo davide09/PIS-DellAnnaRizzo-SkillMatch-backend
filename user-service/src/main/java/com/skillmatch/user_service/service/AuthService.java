@@ -28,24 +28,18 @@ public class AuthService {
         if (!encoder.matches(req.getPassword(), user.getPassword())) {
             throw new RuntimeException("Credenziali errate.");
         }
-
         if (!user.isEnabled()) {
             throw new RuntimeException("Account non approvato.");
         }
-
-        if(user.isSuspended()) {
+        if (user.isSuspended()) {
             throw new RuntimeException("Account sospeso.");
         }
 
-        String token = jwt.generateToken(user.getEmail(), user.getRole().name());
+        String token = jwt.generateToken(user.getEmail(), user.getRole().name(), user.getTokenVersion());
 
         return new AuthResponse(
-                user.getId(),
-                user.getCompanyId(),
-                user.getName(),
-                user.getEmail(),
-                user.getRole().name(),
-                token
+                user.getId(), user.getCompanyId(), user.getName(),
+                user.getEmail(), user.getRole().name(), token
         );
     }
 
@@ -58,23 +52,26 @@ public class AuthService {
                         .password(encoder.encode(req.getPassword()))
                         .role(UserRole.valueOf(req.getRole()))
                         .enabled(false)
+                        .tokenVersion(0)
                         .build()
         );
 
-        String token = jwt.generateToken(saved.getEmail(), saved.getRole().name());
+        String token = jwt.generateToken(saved.getEmail(), saved.getRole().name(), saved.getTokenVersion());
 
         return new AuthResponse(
-                saved.getId(),
-                saved.getCompanyId(),
-                saved.getName(),
-                saved.getEmail(),
-                saved.getRole().name(),
-                token
+                saved.getId(), saved.getCompanyId(), saved.getName(),
+                saved.getEmail(), saved.getRole().name(), token
         );
+    }
 
+    public void logout(String email) {
+        User user = repo.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("Utente non trovato"));
+        user.setTokenVersion(user.getTokenVersion() + 1);
+        repo.save(user);
     }
 
     public String generateInternalToken() {
-        return jwt.generateToken("SYSTEM", "INTERNAL");
+        return jwt.generateInternalToken("SYSTEM", "INTERNAL");
     }
 }

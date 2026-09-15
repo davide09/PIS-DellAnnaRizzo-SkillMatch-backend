@@ -22,6 +22,18 @@ public class User {
     @Column(nullable = false)
     private String name;
 
+    @Builder.Default
+    @Column(nullable = false)
+    private Integer tokenVersion = 0;
+
+    public Integer getTokenVersion() {
+        return tokenVersion;
+    }
+
+    public void setTokenVersion(Integer tokenVersion) {
+        this.tokenVersion = tokenVersion;
+    }
+
     @Column(nullable = false, unique = true)
     private String email;
 

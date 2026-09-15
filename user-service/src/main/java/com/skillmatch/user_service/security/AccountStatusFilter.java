@@ -18,6 +18,7 @@ import java.io.IOException;
 public class AccountStatusFilter extends OncePerRequestFilter {
 
     private final UserRepository repo;
+    private final JwtUtil jwtUtil;
 
     @Override
     protected void doFilterInternal(
@@ -42,9 +43,20 @@ public class AccountStatusFilter extends OncePerRequestFilter {
                     response.getWriter().write("Account sospeso.");
                     return;
                 }
-            }
+                String authHeader = request.getHeader("Authorization");
+                if (authHeader != null && authHeader.startsWith("Bearer ")) {
+                    String token = authHeader.substring(7);
+                    Integer tokenVersion = jwtUtil.extractTokenVersion(token);
+                    if (tokenVersion == null || !tokenVersion.equals(u.getTokenVersion())) {
+                        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                        response.getWriter().write("Sessione non più valida, effettua nuovamente il login.");
+                        return;
+                    }
+                }
         }
 
-        filterChain.doFilter(request, response);
+
     }
+        filterChain.doFilter(request, response);
+  }
 }

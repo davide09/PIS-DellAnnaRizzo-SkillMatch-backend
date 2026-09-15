@@ -6,12 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="7e28dda0-abf4-4ffa-840d-b832ab393761" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/AccountStatusFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/AccountStatusFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/JwtAuthFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/CommissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/CommissionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/FeedbackService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/FeedbackService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/ReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/ReportService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/SkillService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/SkillService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +47,7 @@
   &quot;keyToString&quot;: {
     &quot;JUnit.All in wallet-service.executor&quot;: &quot;Run&quot;,
     &quot;Maven.contract-service [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.user-service [install].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -122,7 +124,9 @@
       <updated>1788868562485</updated>
       <workItem from="1788868564805" duration="311000" />
       <workItem from="1789227674495" duration="5010000" />
-      <workItem from="1789304449098" duration="277000" />
+      <workItem from="1789304449098" duration="4874000" />
+      <workItem from="1789379095330" duration="4231000" />
+      <workItem from="1789389368758" duration="650000" />
     </task>
     <servers />
   </component>
