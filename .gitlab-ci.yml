@@ -1,0 +1,51 @@
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
+
+cache:
+  key: "$CI_COMMIT_REF_SLUG"
+  paths:
+    - .m2/repository
+
+stages:
+  - build-base
+  - build-dependent
+
+#  skillmatch-events e user-service devono finire nel repository locale perche gli altri mic dipendono da loro
+#  .m2. è la cache
+build-shared-and-user:
+  stage: build-base
+  image: maven:3.9-eclipse-temurin-17
+  script:
+    - cd skillmatch-events && mvn $MAVEN_OPTS -B clean install && cd ..
+    - cd user-service && mvn $MAVEN_OPTS -B clean install && cd ..
+
+build-gateway-service:
+  stage: build-base
+  image: maven:3.9-eclipse-temurin-17
+  script:
+    - cd gateway-service && mvn $MAVEN_OPTS -B clean test
+
+build-project-service:
+  stage: build-base
+  image: maven:3.9-eclipse-temurin-17
+  script:
+    - cd project-service && mvn $MAVEN_OPTS -B clean test
+
+# dipendono da quanto installato nello stage precedente (skillmatch-events per contract/wallet, user-service per matching)
+build-contract-service:
+  stage: build-dependent
+  image: maven:3.9-eclipse-temurin-17
+  script:
+    - cd contract-service && mvn $MAVEN_OPTS -B clean test
+
+build-wallet-service:
+  stage: build-dependent
+  image: maven:3.9-eclipse-temurin-17
+  script:
+    - cd wallet-service && mvn $MAVEN_OPTS -B clean test
+
+build-matching-service:
+  stage: build-dependent
+  image: maven:3.9-eclipse-temurin-17
+  script:
+    - cd matching-service && mvn $MAVEN_OPTS -B clean test
