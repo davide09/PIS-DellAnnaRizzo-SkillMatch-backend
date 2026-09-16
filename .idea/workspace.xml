@@ -6,13 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="7e28dda0-abf4-4ffa-840d-b832ab393761" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/AccountStatusFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/AccountStatusFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/JwtAuthFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contract-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/contract-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contract-service/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/contract-service/src/test/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/test/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/test/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet-service/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-service/src/test/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,23 +44,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.All in wallet-service.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.contract-service [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.user-service [install].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.All in wallet-service.executor": "Run",
+    "Maven.contract-service [install].executor": "Run",
+    "Maven.user-service [install].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.configurations.included.in.services": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -89,6 +93,20 @@
     <configuration name="MatchingServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="matching-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.skillmatch.matching_service.MatchingServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProjectServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="project-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.skillmatch.project_service.ProjectServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="user-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.skillmatch.user_service.UserServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -127,6 +145,8 @@
       <workItem from="1789304449098" duration="4874000" />
       <workItem from="1789379095330" duration="4231000" />
       <workItem from="1789389368758" duration="650000" />
+      <workItem from="1789481935750" duration="1887000" />
+      <workItem from="1789558791082" duration="5185000" />
     </task>
     <servers />
   </component>

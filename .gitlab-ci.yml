@@ -10,7 +10,7 @@ stages:
   - build-base
   - build-dependent
 
-#  skillmatch-events e user-service devono finire nel repository locale perche gli altri mic dipendono da loro
+#  skillmatch-events e user-service devono finire nel repository locale perche gli altri mic. dipendono da loro
 #  .m2. è la cache
 build-shared-and-user:
   stage: build-base
