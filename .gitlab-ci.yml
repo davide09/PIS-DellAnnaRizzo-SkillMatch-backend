@@ -9,9 +9,9 @@ cache:
 stages:
   - build-base
   - build-dependent
+  - package
 
-#  skillmatch-events e user-service devono finire nel repository locale perche gli altri mic. dipendono da loro
-#  .m2. è la cache
+
 build-shared-and-user:
   stage: build-base
   image: maven:3.9-eclipse-temurin-17
@@ -31,7 +31,7 @@ build-project-service:
   script:
     - cd project-service && mvn $MAVEN_OPTS -B clean test
 
-# dipendono da quanto installato nello stage precedente (skillmatch-events per contract/wallet, user-service per matching)
+
 build-contract-service:
   stage: build-dependent
   image: maven:3.9-eclipse-temurin-17
@@ -49,3 +49,58 @@ build-matching-service:
   image: maven:3.9-eclipse-temurin-17
   script:
     - cd matching-service && mvn $MAVEN_OPTS -B clean test
+
+
+.docker-build-template:
+  stage: package
+  image: docker:24
+  services:
+    - docker:24-dind
+  variables:
+    DOCKER_TLS_CERTDIR: "/certs"
+  before_script:
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"
+  only:
+    - main
+
+package-user-service:
+  extends: .docker-build-template
+  script:
+    - docker build -t "$CI_REGISTRY_IMAGE/user-service:$CI_COMMIT_SHORT_SHA" -t "$CI_REGISTRY_IMAGE/user-service:latest" ./user-service
+    - docker push "$CI_REGISTRY_IMAGE/user-service:$CI_COMMIT_SHORT_SHA"
+    - docker push "$CI_REGISTRY_IMAGE/user-service:latest"
+
+package-gateway-service:
+  extends: .docker-build-template
+  script:
+    - docker build -t "$CI_REGISTRY_IMAGE/gateway-service:$CI_COMMIT_SHORT_SHA" -t "$CI_REGISTRY_IMAGE/gateway-service:latest" ./gateway-service
+    - docker push "$CI_REGISTRY_IMAGE/gateway-service:$CI_COMMIT_SHORT_SHA"
+    - docker push "$CI_REGISTRY_IMAGE/gateway-service:latest"
+
+package-project-service:
+  extends: .docker-build-template
+  script:
+    - docker build -t "$CI_REGISTRY_IMAGE/project-service:$CI_COMMIT_SHORT_SHA" -t "$CI_REGISTRY_IMAGE/project-service:latest" ./project-service
+    - docker push "$CI_REGISTRY_IMAGE/project-service:$CI_COMMIT_SHORT_SHA"
+    - docker push "$CI_REGISTRY_IMAGE/project-service:latest"
+
+package-contract-service:
+  extends: .docker-build-template
+  script:
+    - docker build -t "$CI_REGISTRY_IMAGE/contract-service:$CI_COMMIT_SHORT_SHA" -t "$CI_REGISTRY_IMAGE/contract-service:latest" ./contract-service
+    - docker push "$CI_REGISTRY_IMAGE/contract-service:$CI_COMMIT_SHORT_SHA"
+    - docker push "$CI_REGISTRY_IMAGE/contract-service:latest"
+
+package-wallet-service:
+  extends: .docker-build-template
+  script:
+    - docker build -t "$CI_REGISTRY_IMAGE/wallet-service:$CI_COMMIT_SHORT_SHA" -t "$CI_REGISTRY_IMAGE/wallet-service:latest" ./wallet-service
+    - docker push "$CI_REGISTRY_IMAGE/wallet-service:$CI_COMMIT_SHORT_SHA"
+    - docker push "$CI_REGISTRY_IMAGE/wallet-service:latest"
+
+package-matching-service:
+  extends: .docker-build-template
+  script:
+    - docker build -t "$CI_REGISTRY_IMAGE/matching-service:$CI_COMMIT_SHORT_SHA" -t "$CI_REGISTRY_IMAGE/matching-service:latest" ./matching-service
+    - docker push "$CI_REGISTRY_IMAGE/matching-service:$CI_COMMIT_SHORT_SHA"
+    - docker push "$CI_REGISTRY_IMAGE/matching-service:latest"
