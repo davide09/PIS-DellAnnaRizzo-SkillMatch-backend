@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://user-db:5432/skillmatch_users  # per docker
-    username: skillmatch
-    password: skillmatch
+    url: jdbc:postgresql://user-db:5432/skillmatch_users  # perdocker
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
@@ -14,8 +14,8 @@ spring:
   rabbitmq:
     host: rabbitmq
     port: 5672
-    username: skillmatch
-    password: skillmatch
+    username: ${RABBITMQ_USER}
+    password: ${RABBITMQ_PASSWORD}
 
 springdoc:
   api-docs:
@@ -24,4 +24,4 @@ springdoc:
     path: /swagger-ui.html
 
 jwt:
-  secret: "KAJSHDKJASHDUIWEHIUEWQHUIEWQHUIEWQHUIEWQHUIEWHU123456"
+  secret: ${JWT_SECRET}

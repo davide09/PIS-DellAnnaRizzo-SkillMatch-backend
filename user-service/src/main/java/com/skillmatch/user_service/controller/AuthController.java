@@ -28,11 +28,6 @@ public class AuthController {
         return authService.register(req);
     }
 
-    // TOKEN INTERNO PER ALTRI MICROSERVIzi
-    @GetMapping("/internal-token")
-    public String getInternalToken() {
-        return authService.generateInternalToken();
-    }
 
     @PostMapping("/logout")
     public ResponseEntity<Void> logout(Authentication authentication) {

@@ -70,8 +70,4 @@ public class AuthService {
         user.setTokenVersion(user.getTokenVersion() + 1);
         repo.save(user);
     }
-
-    public String generateInternalToken() {
-        return jwt.generateInternalToken("SYSTEM", "INTERNAL");
-    }
 }

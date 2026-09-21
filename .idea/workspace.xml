@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e28dda0-abf4-4ffa-840d-b832ab393761" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitlab-ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.gitlab-ci.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contract-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/contract-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matching-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/matching-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/skillmatch/user_service/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/test/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +153,9 @@
       <workItem from="1789481935750" duration="1887000" />
       <workItem from="1789558791082" duration="6273000" />
       <workItem from="1789572611762" duration="626000" />
-      <workItem from="1789630024521" duration="1316000" />
+      <workItem from="1789630024521" duration="1673000" />
+      <workItem from="1789987061579" duration="4460000" />
+      <workItem from="1789997825617" duration="1536000" />
     </task>
     <servers />
   </component>

@@ -2,30 +2,24 @@ version: "3.9"
 
 services:
 
-  # =====================
-  # 🔵 RabbitMQ
-  # =====================
   rabbitmq:
     image: rabbitmq:3-management
     container_name: rabbitmq
     environment:
-      RABBITMQ_DEFAULT_USER: skillmatch
-      RABBITMQ_DEFAULT_PASS: skillmatch
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
     ports:
       - "5672:5672"
       - "15672:15672"
     networks:
       - skillmatch-net
 
-  # =====================
-  # 🟦 USER DATABASE
-  # =====================
   user-db:
     image: postgres:15
     container_name: user-db
     environment:
-      POSTGRES_USER: skillmatch
-      POSTGRES_PASSWORD: skillmatch
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: skillmatch_users
     ports:
       - "5432:5432"
@@ -34,15 +28,12 @@ services:
     networks:
       - skillmatch-net
 
-  # =====================
-  # 🟧 PROJECT DATABASE
-  # =====================
   project-db:
     image: postgres:15
     container_name: project-db
     environment:
-      POSTGRES_USER: skillmatch
-      POSTGRES_PASSWORD: skillmatch
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: skillmatch_projects
     ports:
       - "5433:5432"
@@ -51,15 +42,12 @@ services:
     networks:
       - skillmatch-net
 
-  # =====================
-  # 🟩 CONTRACT DATABASE
-  # =====================
   contract-db:
     image: postgres:15
     container_name: contract-db
     environment:
-      POSTGRES_USER: skillmatch
-      POSTGRES_PASSWORD: skillmatch
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: skillmatch_contracts
     ports:
       - "5434:5432"
@@ -68,14 +56,17 @@ services:
     networks:
       - skillmatch-net
 
-  # =====================
-  # 🟦 USER SERVICE (porta 8083)
-  # =====================
   user-service:
     build:
       context: ./user-service
       dockerfile: Dockerfile
     container_name: user-service
+    environment:
+      JWT_SECRET: ${JWT_SECRET}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      RABBITMQ_USER: ${RABBITMQ_USER}
+      RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD}
     depends_on:
       - user-db
       - rabbitmq
@@ -84,14 +75,16 @@ services:
     networks:
       - skillmatch-net
 
-  # =====================
-  # 🟧 PROJECT SERVICE (porta 8081)
-  # =====================
   project-service:
     build:
       context: ./project-service
       dockerfile: Dockerfile
     container_name: project-service
+    environment:
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      RABBITMQ_USER: ${RABBITMQ_USER}
+      RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD}
     depends_on:
       - project-db
       - rabbitmq
@@ -100,14 +93,16 @@ services:
     networks:
       - skillmatch-net
 
-  # =====================
-  # 🟩 CONTRACT SERVICE (porta 8082)
-  # =====================
   contract-service:
     build:
       context: ./contract-service
       dockerfile: Dockerfile
     container_name: contract-service
+    environment:
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      RABBITMQ_USER: ${RABBITMQ_USER}
+      RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD}
     depends_on:
       - contract-db
       - rabbitmq
@@ -117,14 +112,14 @@ services:
     networks:
       - skillmatch-net
 
-  # =====================
-  # 🟪 MATCHING SERVICE (porta 8084)
-  # =====================
   matching-service:
     build:
       context: ./matching-service
       dockerfile: Dockerfile
     container_name: matching-service
+    environment:
+      RABBITMQ_USER: ${RABBITMQ_USER}
+      RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD}
     depends_on:
       - user-service
       - project-service
@@ -134,15 +129,12 @@ services:
     networks:
       - skillmatch-net
 
-  # =====================
-  # 🟨 WALLET DATABASE
-  # =====================
   wallet-db:
     image: postgres:15
     container_name: wallet-db
     environment:
-      POSTGRES_USER: skillmatch
-      POSTGRES_PASSWORD: skillmatch
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: skillmatch_wallets
     ports:
       - "5436:5432"
@@ -151,14 +143,16 @@ services:
     networks:
       - skillmatch-net
 
-  # =====================
-  # 🟨 WALLET SERVICE (porta 8087)
-  # =====================
   wallet-service:
     build:
       context: ./wallet-service
       dockerfile: Dockerfile
     container_name: wallet-service
+    environment:
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      RABBITMQ_USER: ${RABBITMQ_USER}
+      RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD}
     depends_on:
       - wallet-db
       - rabbitmq
@@ -167,14 +161,13 @@ services:
     networks:
       - skillmatch-net
 
-  # =====================
-  # 🟣 GATEWAY (porta 8080)
-  # =====================
   gateway-service:
     build:
       context: ./gateway-service
       dockerfile: Dockerfile
     container_name: gateway-service
+    environment:
+      JWT_SECRET: ${JWT_SECRET}
     depends_on:
       - user-service
       - project-service
@@ -194,9 +187,6 @@ services:
     networks:
       - skillmatch-net
 
-# =====================
-# 🟦 NETWORKS + VOLUMES
-# =====================
 networks:
   skillmatch-net:
 
