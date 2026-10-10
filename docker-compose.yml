@@ -177,7 +177,15 @@ services:
       - "8080:8080"
     networks:
       - skillmatch-net
-
+  frontend:
+    image: registry.gitlab.com/dellanna27/pis-dellannarizzo-skillmatch-frontend/frontend:latest
+    container_name: frontend
+    depends_on:
+      - gateway-service
+    ports:
+      - "80:80"
+    networks:
+      - skillmatch-net
   adminer:
     image: adminer
     container_name: adminer
