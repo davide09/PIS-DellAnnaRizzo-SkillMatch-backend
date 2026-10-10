@@ -17,10 +17,11 @@ build-shared-and-user:
   image: maven:3.9-eclipse-temurin-17
   script:
     - cd skillmatch-events && mvn $MAVEN_OPTS -B clean install && cd ..
-    - cd user-service && mvn $MAVEN_OPTS -B clean package && cd ..
+    - cd user-service && mvn $MAVEN_OPTS -B clean install && cd ..
   artifacts:
     paths:
       - user-service/target/*.jar
+      - .m2/repository/com/skillmatch/
     expire_in: 1 hour
 
 build-gateway-service:

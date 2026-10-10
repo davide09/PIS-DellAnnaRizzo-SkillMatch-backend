@@ -1,0 +1,206 @@
+services:
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    restart: unless-stopped
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - skillmatch-net
+
+  user-db:
+    image: postgres:15
+    container_name: user-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: skillmatch_users
+    ports:
+      - "5432:5432"
+    volumes:
+      - user_data:/var/lib/postgresql/data
+    networks:
+      - skillmatch-net
+
+  project-db:
+    image: postgres:15
+    container_name: project-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: skillmatch_projects
+    ports:
+      - "5433:5432"
+    volumes:
+      - project_data:/var/lib/postgresql/data
+    networks:
+      - skillmatch-net
+
+  contract-db:
+    image: postgres:15
+    container_name: contract-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: skillmatch_contracts
+    ports:
+      - "5434:5432"
+    volumes:
+      - contract_data:/var/lib/postgresql/data
+    networks:
+      - skillmatch-net
+
+  wallet-db:
+    image: postgres:15
+    container_name: wallet-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: skillmatch_wallets
+    ports:
+      - "5436:5432"
+    volumes:
+      - wallet_data:/var/lib/postgresql/data
+    networks:
+      - skillmatch-net
+
+  user-service:
+    image: registry.gitlab.com/${GITLAB_NAMESPACE}/${GITLAB_PROJECT}/user-service:${IMAGE_TAG}
+    container_name: user-service
+    restart: unless-stopped
+    environment:
+      JWT_SECRET: ${JWT_SECRET}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      RABBITMQ_USER: ${RABBITMQ_USER}
+      RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD}
+    depends_on:
+      - user-db
+      - rabbitmq
+    ports:
+      - "8083:8083"
+    networks:
+      - skillmatch-net
+
+  project-service:
+    image: registry.gitlab.com/${GITLAB_NAMESPACE}/${GITLAB_PROJECT}/project-service:${IMAGE_TAG}
+    container_name: project-service
+    restart: unless-stopped
+    environment:
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      RABBITMQ_USER: ${RABBITMQ_USER}
+      RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD}
+    depends_on:
+      - project-db
+      - rabbitmq
+    ports:
+      - "8081:8081"
+    networks:
+      - skillmatch-net
+
+  contract-service:
+    image: registry.gitlab.com/${GITLAB_NAMESPACE}/${GITLAB_PROJECT}/contract-service:${IMAGE_TAG}
+    container_name: contract-service
+    restart: unless-stopped
+    environment:
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      RABBITMQ_USER: ${RABBITMQ_USER}
+      RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD}
+    depends_on:
+      - contract-db
+      - rabbitmq
+      - project-service
+    ports:
+      - "8082:8082"
+    networks:
+      - skillmatch-net
+
+  matching-service:
+    image: registry.gitlab.com/${GITLAB_NAMESPACE}/${GITLAB_PROJECT}/matching-service:${IMAGE_TAG}
+    container_name: matching-service
+    restart: unless-stopped
+    environment:
+      RABBITMQ_USER: ${RABBITMQ_USER}
+      RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD}
+    depends_on:
+      - user-service
+      - project-service
+      - rabbitmq
+    ports:
+      - "8084:8084"
+    networks:
+      - skillmatch-net
+
+  wallet-service:
+    image: registry.gitlab.com/${GITLAB_NAMESPACE}/${GITLAB_PROJECT}/wallet-service:${IMAGE_TAG}
+    container_name: wallet-service
+    restart: unless-stopped
+    environment:
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      RABBITMQ_USER: ${RABBITMQ_USER}
+      RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD}
+    depends_on:
+      - wallet-db
+      - rabbitmq
+    ports:
+      - "8087:8087"
+    networks:
+      - skillmatch-net
+
+  gateway-service:
+    image: registry.gitlab.com/${GITLAB_NAMESPACE}/${GITLAB_PROJECT}/gateway-service:${IMAGE_TAG}
+    container_name: gateway-service
+    restart: unless-stopped
+    environment:
+      JWT_SECRET: ${JWT_SECRET}
+    depends_on:
+      - user-service
+      - project-service
+      - contract-service
+      - matching-service
+      - wallet-service
+    ports:
+      - "8080:8080"
+    networks:
+      - skillmatch-net
+
+  frontend:
+    image: registry.gitlab.com/dellanna27/pis-dellannarizzo-skillmatch-frontend/frontend:${IMAGE_TAG}
+    container_name: frontend
+    restart: unless-stopped
+    depends_on:
+      - gateway-service
+    ports:
+      - "80:80"
+    networks:
+      - skillmatch-net
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    ports:
+      - "8088:8080"
+    networks:
+      - skillmatch-net
+
+networks:
+  skillmatch-net:
+
+volumes:
+  user_data:
+  project_data:
+  contract_data:
+  wallet_data:
