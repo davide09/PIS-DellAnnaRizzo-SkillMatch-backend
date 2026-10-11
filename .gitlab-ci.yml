@@ -10,6 +10,7 @@ stages:
   - build-base
   - build-dependent
   - package
+  - deploy
 
 
 build-shared-and-user:
@@ -129,3 +130,21 @@ package-matching-service:
     - docker build -t "$CI_REGISTRY_IMAGE/matching-service:$CI_COMMIT_SHORT_SHA" -t "$CI_REGISTRY_IMAGE/matching-service:latest" ./matching-service
     - docker push "$CI_REGISTRY_IMAGE/matching-service:$CI_COMMIT_SHORT_SHA"
     - docker push "$CI_REGISTRY_IMAGE/matching-service:latest"
+deploy-ec2:
+  stage: deploy
+  image: alpine:3.20
+  before_script:
+    - apk add --no-cache openssh-client
+    - chmod 600 "$SSH_PRIVATE_KEY"
+  script:
+    - |
+      ssh -i "$SSH_PRIVATE_KEY" -o StrictHostKeyChecking=no "$EC2_USER@$EC2_HOST" '
+        set -e
+        cd ~/PIS-DellAnnaRizzo-SkillMatch-backend
+        git pull
+        docker compose -f docker-compose.prod.yml pull
+        docker compose -f docker-compose.prod.yml up -d
+        docker image prune -f
+      '
+  only:
+    - main
