@@ -141,7 +141,8 @@ deploy-ec2:
       ssh -i "$SSH_PRIVATE_KEY" -o StrictHostKeyChecking=no "$EC2_USER@$EC2_HOST" '
         set -e
         cd ~/PIS-DellAnnaRizzo-SkillMatch-backend
-        git pull
+        git fetch origin main
+        git checkout origin/main -- docker-compose.prod.yml
         docker compose -f docker-compose.prod.yml pull
         docker compose -f docker-compose.prod.yml up -d
         docker image prune -f
